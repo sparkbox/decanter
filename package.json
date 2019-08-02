@@ -32,6 +32,10 @@
   "bugs": {
     "url": "https://github.com/SU-SWS/decanter/issues"
   },
+  "browserslist": [
+    "last 2 versions",
+    "ie 11"
+  ],
   "dependencies": {
     "bourbon": "^5.1.0"
   },

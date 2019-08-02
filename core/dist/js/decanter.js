@@ -96,7 +96,154 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _main_nav_main_nav_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main-nav/main-nav.js */ "./core/src/js/components/main-nav/main-nav.js");
+/* harmony import */ var _gallery_gallery_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./gallery/gallery.js */ "./core/src/js/components/gallery/gallery.js");
+// Main Nav Component and dependencies.
+ // Gallery Component and dependencies.
 
+
+
+/***/ }),
+
+/***/ "./core/src/js/components/gallery/ModalGallery.js":
+/*!********************************************************!*\
+  !*** ./core/src/js/components/gallery/ModalGallery.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ModalGallery; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+/**
+ *
+ */
+var ModalGallery =
+/*#__PURE__*/
+function () {
+  /**
+   * [constructor description]
+   * @param {[type]} elem    [description]
+   * @param {[type]} options [description]
+   */
+  function ModalGallery(elem, options) {
+    _classCallCheck(this, ModalGallery);
+
+    this.elem = elem;
+    this.options = options;
+    this.maxItems = options.maxItems || 4; // Remove the class from the wrapper.
+
+    this.elem.classList.remove('no-js'); // Give this instance a unique ID.
+
+    var id = Math.random().toString(36).substr(2, 9);
+    this.id = 'su-gallery-id--' + id;
+    this.elem.id = this.id; // Store the links and images.
+
+    this.links = this.elem.querySelectorAll('#' + this.id + ' > .su-gallery__link');
+    this.images = this.elem.querySelectorAll('#' + this.id + ' > .su-gallery__image'); // Only activate on more than max.
+
+    if (this.links < this.maxItems) {
+      return;
+    } // Initialize setup.
+
+
+    this.initialize();
+  }
+  /**
+   * [initialize description]
+   * @return {[type]} [description]
+   */
+
+
+  _createClass(ModalGallery, [{
+    key: "initialize",
+    value: function initialize() {
+      this.elem.addEventListener('click', this);
+      this.elem.addEventListener('keydown', this);
+    }
+    /**
+     * Handler for all events attached to an instance of this class.
+     *
+     * This method must exist when events are bound to an instance of a class
+     * (vs a function). This method is called for all events bound to an
+     * instance. It inspects the instance (this) for an appropriate handler
+     * based on the event type. If found, it dispatches the event to the
+     * appropriate handler.
+     *
+     * @param {Event} event - The triggering event.
+     */
+
+  }, {
+    key: "handleEvent",
+    value: function handleEvent(event) {
+      event = event || window.event; // If this class has an onEvent method (onClick, onKeydown) invoke it.
+
+      var handler = 'on' + event.type.charAt(0).toUpperCase() + event.type.slice(1); // What was clicked.
+
+      var target = event.target || event.srcElement;
+
+      if (typeof this[handler] === 'function') {
+        this[handler](event, target);
+      }
+    }
+    /**
+     * [onClick description]
+     * @param  {[type]} event  [description]
+     * @param  {[type]} target [description]
+     * @return {[type]}        [description]
+     */
+
+  }, {
+    key: "onClick",
+    value: function onClick(event, target) {
+      console.log("What!?");
+      event.preventDefault();
+    }
+  }]);
+
+  return ModalGallery;
+}();
+
+
+
+/***/ }),
+
+/***/ "./core/src/js/components/gallery/gallery.js":
+/*!***************************************************!*\
+  !*** ./core/src/js/components/gallery/gallery.js ***!
+  \***************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _core_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core/core */ "./core/src/js/core/core.js");
+/* harmony import */ var _core_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_core__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ModalGallery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ModalGallery */ "./core/src/js/components/gallery/ModalGallery.js");
+
+
+/**
+ *
+ */
+
+document.addEventListener('DOMContentLoaded', function (event) {
+  // Trigger Class.
+  var galleryClass = 'su-gallery'; // Find em.
+
+  var galleries = document.querySelectorAll('.' + galleryClass); // Initialize each gallery that was found.
+
+  galleries.forEach(function (gallery, index) {
+    var options = {
+      maxItems: 4
+    };
+    new _ModalGallery__WEBPACK_IMPORTED_MODULE_1__["default"](gallery, options);
+  });
+});
 
 /***/ }),
 

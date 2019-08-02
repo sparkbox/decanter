@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Gallery Component
+ *
+ * A grid of image thumbnails that expand in a modal.
+ *
+ * Available variables:
+ * - attributes: For additional HTML attributes not already provided.
+ * - modifier_class: Additional css classes to change look and behaviour.
+ * - images: A collection of image urls or
+ */
+#}
+<div{{ attributes }} class="su-gallery no-js {{ modifier_class }}">
+  {% if images is iterable %}
+    {% for image in images %}
+      {% if image.source is not empty %}
+      <a href="{{ image.source }}" title="{{ image.title }}" class="su-gallery__link">
+      {% endif %}
+      <img src="{{ image.thumbnail }}" alt="{{ image.alt }}" class="su-gallery__image" />
+      {% if image.source is not empty %}
+      </a>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    {{ images }}
+  {% endif %}
+  <div class="su-gallery__controls"></div>
+</div>
