@@ -63,6 +63,11 @@ var config = {
           }
         }
       },
+      // CSS imports (from npm packages)
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
       // Apply Plugins to SCSS/SASS files.
       {
         test: /\.s[ac]ss$/,
@@ -95,6 +100,7 @@ var config = {
             options: {
               includePaths: [
                 path.resolve( __dirname, npmPackage, "bourbon/core" ),
+                path.resolve( __dirname, npmPackage ),
                 path.resolve( __dirname, srcDir, "scss" )
               ],
               sourceMap: true,

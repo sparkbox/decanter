@@ -3,36 +3,36 @@
   "modifier_class": "",
   "images": [
     {
-      "thumbnail": "https://picsum.photos/300/200?random=1",
-      "source": "https://picsum.photos/3000/2000?random=1"
+      "thumbnail": "https://picsum.photos/300/200.jpg?random=1",
+      "source": "https://picsum.photos/3000/2000.jpg?random=1"
     },
     {
-      "thumbnail": "https://picsum.photos/300/200?random=2",
-      "source": "https://picsum.photos/3000/2000?random=2"
+      "thumbnail": "https://picsum.photos/300/200.jpg?random=2",
+      "source": "https://picsum.photos/3000/2000.jpg?random=2"
     },
     {
-      "thumbnail": "https://picsum.photos/300/200?random=3",
-      "source": "https://picsum.photos/3000/2000?random=3"
+      "thumbnail": "https://picsum.photos/300/200.jpg?random=3",
+      "source": "https://picsum.photos/3000/2000.jpg?random=3"
     },
     {
-      "thumbnail": "https://picsum.photos/300/200?random=4",
-      "source": "https://picsum.photos/3000/2000?random=4"
+      "thumbnail": "https://picsum.photos/300/200.jpg?random=4",
+      "source": "https://picsum.photos/3000/2000.jpg?random=4"
     },
     {
-      "thumbnail": "https://picsum.photos/300/200?random=5",
-      "source": "https://picsum.photos/3000/2000?random=5"
+      "thumbnail": "https://picsum.photos/300/200.jpg?random=5",
+      "source": "https://picsum.photos/3000/2000.jpg?random=5"
     },
     {
-      "thumbnail": "https://picsum.photos/300/200?random=6",
-      "source": "https://picsum.photos/3000/2000?random=6"
+      "thumbnail": "https://picsum.photos/300/200.jpg?random=6",
+      "source": "https://picsum.photos/3000/2000.jpg?random=6"
     },
     {
-      "thumbnail": "https://picsum.photos/300/200?random=7",
-      "source": "https://picsum.photos/3000/2000?random=7"
+      "thumbnail": "https://picsum.photos/300/200.jpg?random=7",
+      "source": "https://picsum.photos/3000/2000.jpg?random=7"
     },
     {
-      "thumbnail": "https://picsum.photos/300/200?random=8",
-      "source": "https://picsum.photos/3000/2000?random=8"
+      "thumbnail": "https://picsum.photos/300/200.jpg?random=8",
+      "source": "https://picsum.photos/3000/2000.jpg?random=8"
     }
   ]
 }

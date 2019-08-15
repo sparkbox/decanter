@@ -1,7 +1,10 @@
+import PhotoSwipe from 'photoswipe/dist/photoswipe.js';
+import PhotoSwipeUI from 'photoswipe/dist/photoswipe-ui-default.js';
+import PhotoSwipeCss from 'photoswipe/dist/photoswipe.css';
+
 /**
  *
  */
-
 export default class ModalGallery {
 
   /**
@@ -13,6 +16,7 @@ export default class ModalGallery {
     this.elem = elem;
     this.options = options;
     this.maxItems = options.maxItems || 4;
+    this.modal = Object.assign({ selector: '.su-gallery__link' }, options.modal);
     // Remove the class from the wrapper.
     this.elem.classList.remove('no-js');
     // Give this instance a unique ID.
@@ -37,8 +41,10 @@ export default class ModalGallery {
    * @return {[type]} [description]
    */
   initialize() {
-    this.elem.addEventListener('click', this);
-    this.elem.addEventListener('keydown', this);
+    this.modal.selector = '#' + this.id + " " + this.modal.selector;
+    // Initializes and opens PhotoSwipe
+    var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI, items, options);
+    gallery.init();
   }
 
   /**
@@ -66,17 +72,6 @@ export default class ModalGallery {
     if (typeof this[handler] === 'function') {
       this[handler](event, target);
     }
-  }
-
-  /**
-   * [onClick description]
-   * @param  {[type]} event  [description]
-   * @param  {[type]} target [description]
-   * @return {[type]}        [description]
-   */
-  onClick(event, target) {
-    console.log("What!?");
-    event.preventDefault();
   }
 
 }

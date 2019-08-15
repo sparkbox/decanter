@@ -14,9 +14,14 @@ document.addEventListener('DOMContentLoaded', event => {
 
   // Initialize each gallery that was found.
   galleries.forEach((gallery, index) => {
+
     let options = {
-      maxItems: 4
+      maxItems: 4,
+      modal: {
+        selector: ".su-gallery__link"
+      }
     };
+
     new ModalGallery(gallery, options);
   });
 
